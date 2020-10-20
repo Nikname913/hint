@@ -1,0 +1,1260 @@
+<html>
+<head>
+  	<!-- version 1.0.0 -->
+    <meta charset="utf-8"/>
+    <title>hint | main page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="hint"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react-router-dom/umd/react-router-dom.min.js"></script>
+    
+    <style>
+        
+    /** ---------- **/    
+    /** version 1.0 **/
+    /** ---------- **/    
+
+* {
+    margin: 0;
+    padding: 0;
+    transition: all 300ms;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}             
+.main__head,
+.main__foot,
+.main__main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    
+    position: relative;
+    width: 100%;
+    height: 70px;
+    
+    max-width: 1950px;
+    min-width: 1450px;
+    background-color: #4a76a8;
+}
+.main__head {
+    position: fixed;
+    z-index: 20;
+    box-shadow: 0px 0px 2.5px grey;
+}
+.main__main {
+    background-color: rgba(237, 238, 240, 0.5);
+    height: auto;
+    min-height: 100vh;
+    align-items: flex-start;
+}
+.main__foot {
+    background-color: #edeef0;
+    position: fixed;
+    top: 100%;
+    margin-top: -70px;
+    z-index: 20;
+    box-shadow: 0px 0px 2.5px grey;
+}                
+.main__contentBlock {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 1000px;
+    height: auto;
+    min-height: 60px;
+}
+.main__contentBlock__logo {
+    display: block;
+    position: relative;
+    width: 600px;
+    height: 60px;
+    line-height: 62px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Special Elite', cursive;
+}
+
+.main__contentBlock__ava {
+    display: block;
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: white;
+    left: 100%;
+    margin-left: -40px;
+    top: 50%;
+    margin-top: -19px;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}        
+.main__contentBlock__log {
+    display: block;
+    position: absolute;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    font-size: 12px;
+    left: 100%;
+    margin-left: -172px;
+    font-weight: 700;
+    top: 50%;
+    margin-top: -15px;
+    text-align: right;
+}
+
+.main__contentBlock__log:hover,
+.main__contentBlock__ava:hover {
+    cursor: pointer;
+}     
+        
+.main__contentBlock {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 1000px;
+    height: auto;
+    min-height: 60px;
+}
+
+main .main__contentBlock {
+    margin-top: 90px;
+}        
+        
+.main__contentBlock__photo {
+    display: block;
+    position: relative;
+    width: 260px;
+    height: 340px;
+    border-radius: 5px;
+    background-color: #edeef0;
+    box-shadow: 0px 0px 2.5px #cccccc;
+    font-size: 14px;
+    text-align: center;
+    line-height: 338px;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+        
+.main__contentBlock__photo::after {
+    content: "MY PROFILE";
+    display: block;
+    position: absolute;
+    width: 160px;
+    height: 36px;
+    line-height: 36px;
+    left: 100%;
+    top: 6px;
+    text-align: left;
+    padding-left: 14px;
+    margin-left: 20px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}        
+        
+.main__contentBlock__famHints {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;
+    position: relative;
+    width: 720px;
+    height: 250px;
+    background-color: #edeef0;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2.5px #cccccc;
+    margin-top: 58px;
+    
+    line-height: 22px;
+    font-size: 13px;
+    padding: 20px;
+    padding-right: 80px;
+}
+        
+.main__contentBlock__famHints span {
+
+    display: block;
+    position: relative;
+    height: 40px;
+    width: 200px;
+    line-height: 39px;
+    background-color: white;
+    padding-left: 18px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    border-radius: 20px;
+    
+}
+        
+.main__contentBlock__famHints span::after {
+
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #4a76a8;
+    top: 50%;
+    margin-top: -10px;
+    left: 100%;
+    margin-left: 12px;
+    
+}
+        
+.main__contentBlock__workSpace,
+.main__contentBlock__settings {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    background-color: #edeef0;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2.5px #cccccc;
+    margin-top: 20px;
+    
+    line-height: 22px;
+    font-size: 13px;
+    padding: 30px;
+    padding-right: 160px;
+}     
+        
+.main__contentBlock__workSpace {
+
+    height: 600px;
+    
+}
+        
+.main__contentBlock__workSpace,
+.main__contentBlock__settings {
+    padding: 0;
+    align-items: flex-start;
+}
+        
+.main__contentBlock__settings {
+    margin-top: 40px;
+}
+        
+.main__contentBlock__workSpace::after {
+
+    content: "хинтпанель";
+    display: block;
+    position: absolute;
+    width: 240px;
+    height: 36px;
+    font-size: 13px;
+    color: grey;
+    top: 0;
+    left: 100%;
+    margin-left: -280px;
+    margin-top: -32px;
+    font-style: italic;
+    text-align: right;
+    
+}
+
+.main__contentBlock__settings::after {
+
+    content: "вопросы вам";
+    display: block;
+    position: absolute;
+    width: 240px;
+    height: 36px;
+    font-size: 13px;
+    color: grey;
+    top: 0;
+    left: 100%;
+    margin-left: -280px;
+    margin-top: -32px;
+    font-style: italic;
+    text-align: right;
+    
+}        
+        
+.main__contentBlock__workSpace__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 260px;
+    height: 100%;
+    border-right: 2px solid white;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding-top: 16px;
+}        
+        
+.main__contentBlock__settings .main__contentBlock__workSpace__menu span {
+
+    box-shadow: none !important;
+    text-align: center;
+    border-bottom: 2px solid white;
+    border-radius: 0px;
+    padding-left: 0px;
+    background-color: transparent;
+    
+}
+        
+.main__contentBlock__settings .main__contentBlock__workSpace__menu span:nth-of-type(2) {
+
+    height: auto !important;
+    line-height: 22px !important;
+    padding: 0px 14px 14px;
+    
+}        
+        
+.main__contentBlock__workSpace__menu span {
+
+    display: block;
+    position: relative;
+    height: 40px;
+    width: 200px;
+    line-height: 39px;
+    background-color: white;
+    padding-left: 18px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    border-radius: 20px;
+    
+}
+        
+.main__contentBlock__workSpace__menu span:last-of-type {
+
+    box-shadow: 0px 0px 2.5px grey;
+    background-color: #edeef0;
+    font-style: italic;
+    
+}        
+        
+.main__contentBlock__workSpace__menu span:hover {
+
+    cursor: pointer;
+    
+}        
+        
+.main__contentBlock__settings:last-of-type {
+    
+    margin-bottom: 90px;
+    
+}
+        
+    /** ----------- **/    
+    /** styles tab2 **/
+    /** ----------- **/
+        
+        .main__contentBlock__workSpace__menu__texarea,
+        .main__contentBlock__workSpace__menu__texareaAnsw {
+            display: block;
+            position: relative;
+            width: 540px;
+            height: 220px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            font-size: 13px;
+            padding: 14px;
+            padding-left: 17px;
+            padding-right: 50px;
+            line-height: 20px;
+            margin-top: 16px;
+            margin-left: 16px;
+        }
+        
+        .main__contentBlock__workSpace__menu__texareaAnsw {
+            position: absolute;
+            background-color: white;
+            margin-top: 378px;
+            margin-left: 276px;
+            height: 180px;
+            color: grey;
+            font-style: italic;
+        }
+        
+        article.main__contentBlock__workSpace__menu__texarea {
+            background-color: white;
+            width: calc(100% - 276px);
+            margin: 0;
+            border-radius: 0;
+            margin-left: 16px;
+            margin-top: 16px;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+        
+        .main__contentBlock__workSpace {}
+        
+        .main__contentBlock__workSpace > span,
+        .main__contentBlock__settings > span {
+            display: block;
+            position: absolute;
+            width: 50px;
+            height: 100%;
+            background-color: #4a76a8;
+            left: 100%;
+            margin-left: -200px;
+            top: 0;
+            margin-top: -20px;
+            z-index: 10;
+            
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            
+            transition: all 300ms;
+        }
+        
+        .main__contentBlock__workSpace > span span,
+        .main__contentBlock__settings > span span {
+            display: block;
+            position: absolute;
+            width: 23px;
+            height: 23px;
+            background-color: white;
+            border-radius: 50%;
+            
+            left: 50%;
+            margin-left: -11.5px;
+            top: 0;
+            margin-top: 12px;
+            
+            border: 2px solid black;
+            background-size: 140%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url(img/close.png);
+        }
+        
+        .main__contentBlock__workSpace > span span:hover {
+            cursor: pointer;
+        }
+        
+        .main__contentBlock__workSpace > span span:nth-of-type(2),
+        .main__contentBlock__settings > span span:nth-of-type(2) {
+            margin-top: 45px;
+        }
+        
+        .main__contentBlock__workSpace > span span:nth-of-type(3),
+        .main__contentBlock__settings > span span:nth-of-type(3) {
+            margin-top: 78px;
+        }
+        
+        .main__contentBlock__workSpace > span span:nth-of-type(4),
+        .main__contentBlock__settings > span span:nth-of-type(4) {
+            margin-top: 111px;
+        }
+        
+        .main__contentBlock__workSpace__send {
+            display: block;
+            position: relative;
+            width: 200px;
+            height: 40px;
+            border-radius: 10px;
+            background-color: #4a76a8;
+            left: 0;
+            margin-left: -180px;
+            top: 0;
+            margin-top: 274px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            
+            line-height: 39px;
+            color: white;
+            text-align: center;
+            padding-right: 10px;
+            letter-spacing: 2px;
+            font-size: 10px;
+        }
+        
+        .main__contentBlock__workSpace__sendRand {
+            margin-top: 16px;
+            height: 50px;
+            line-height: 46px;
+            background-color: transparent;
+            border: 2px solid #4a76a8;
+            color: #4a76a8;
+            width: 240px;
+            margin-left: -200px;
+            
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+        }
+        
+        .main__contentBlock__workSpace__send:hover {
+            cursor: pointer;
+        }
+        
+        .main__contentBlock__workSpace__rate {
+            display: block;
+            position: absolute;
+            width: 200px;
+            height: 40px;
+            
+            top: 0;
+            margin-top: -58px;
+            left: 100%;
+            margin-left: -200px;
+        }
+        
+        .main__contentBlock__workSpace__rate div {
+            display: block;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #edeef0;
+            box-shadow: 0px 0px 2.5px #cccccc;
+            left: 100%;
+            margin-left: -40px;
+            
+            background-size: 80%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url(img/like.png);
+        }
+        
+        .main__contentBlock__workSpace__rate p {
+            display: block;
+            position: absolute;
+            width: 120px;
+            height: 40px;
+            line-height: 38px;
+            left: 100%;
+            top: 0;
+            margin-left: -172px;
+            margin-top: 0;
+            text-align: right;
+        }
+        
+        .main__contentBlock__workSpace__contact {
+            display: block;
+            position: absolute;
+            width: 340px;
+            height: 100%;
+            top: 0;
+            margin-top: 0;
+            left: 300px;
+            border-left: 2px solid #cccccc;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            padding-top: 40px;
+        }
+        
+        .main__contentBlock__workSpace__contact h4 {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 36px;
+            line-height: 36px;
+            font-weight: 200;
+            font-style: italic;
+            color: grey;
+            padding-left: 14px;
+            top: 0;
+        }
+        
+        .main__contentBlock__workSpace__contact p {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 36px;
+            border-bottom: 1px dashed #cccccc;
+            line-height: 35px;
+            margin-left: 20px;
+            font-size: 12px;
+            padding-left: 8px;
+            color: grey;
+        }
+        
+        .main__contentBlock__workSpace__contact p:hover {
+            cursor: pointer;
+            color: #4a76a8;
+        }
+        
+        .main__contentBlock__message,
+        .main__contentBlock__search,
+        .main__contentBlock__contacts,
+        .main__contentBlock__messageAct {
+            display: block;
+            position: absolute;
+            width: 40px;
+            height: 30px;
+            border: 1px solid white;
+            border-radius: 5px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            left: 100%;
+            top: 50%;
+            margin-top: -15px;
+            margin-left: -194px;
+        }
+        
+        .main__contentBlock__messageAct::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: red;
+            
+            top: 0;
+            left: 100%;
+            margin-top: -13px;
+        }
+        
+        .main__contentBlock__contacts {
+            margin-left: -248px;
+        }
+        
+        .main__contentBlock__search {
+            margin-left: -302px;
+        }
+    
+    /** ---------- **/    
+    /** version 1.0 **/
+    /** ---------- **/     
+        
+    </style>
+    
+    <script type="text/babel">
+
+      const profilePhoto = {
+          
+          url: 'http://images.vfl.ru/ii/1599639546/627fb74f/31583102.png'
+          
+      }
+      
+      const headClasses = [
+          'main__head',
+          'main__contentBlock',
+          'main__contentBlock__logo',
+          'main__contentBlock__log',
+          'main__contentBlock__ava',
+          'main__contentBlock__message',
+          'main__contentBlock__search',
+          'main__contentBlock__contacts',
+          'main__contentBlock__messageAct'
+          
+      ];
+
+      const footClasses = [
+          'main__foot'
+      ];
+
+      const mainClasses = [
+          'main__main',
+          'main__contentBlock',
+          'main__contentBlock__photo',
+          'main__contentBlock__famHints',
+          'main__contentBlock__workSpace',
+          'main__contentBlock__settings',
+          'main__contentBlock__workSpace__menu',
+          'main__contentBlock__workSpace__menu__texarea',
+          'main__contentBlock__workSpace__send',
+          'main__contentBlock__workSpace__rate',
+          'main__contentBlock__workSpace__contact',
+          'main__contentBlock__workSpace__send main__contentBlock__workSpace__sendRand',
+          'main__contentBlock__workSpace__menu__texareaAnsw'
+      ];
+
+      class Head extends React.Component {
+        
+         constructor(props) {
+             
+             super(props);
+             this.state = {
+                 
+                 avatar: '',
+                 login: 'LOGIN',
+                 mesClass: 'main__contentBlock__message'
+                 
+             }
+             
+             this.getAsk = this.getAsk.bind(this);
+             
+         }
+          
+         getAsk() {
+              
+            fetch('http://tech.caropka.ru/hint/hinthub.php?hid=' + localStorage.getItem('hauth') + '&&fork=getAsk')
+            .then(res => res.text())
+            .then(
+        	
+        		(result) => {
+                    
+                    alert(result);
+        			
+        			let rslt = result;
+                    if ( rslt != '' ) {
+                        
+                        self.setState({
+                            
+                            // mesClass: 'main__contentBlock__messageAct'
+                            
+                        });
+                        
+                    }
+        			
+        		}
+        		
+            );
+              
+         }
+          
+         componentDidMount() {
+              
+            // let ws = new WebSocket('ws://tech.caropka.ru/hint/hinthub.php?hid=HID-576300&&fork=getAsk');
+            // ws.onmessage = function(event) { alert(event.data); }
+              
+            var self = this; 
+            localStorage.setItem('getAsk', 'null'); 
+             
+            setInterval(function() {  
+             
+            fetch('http://tech.caropka.ru/hint/hinthub.php?hid=' + localStorage.getItem('hauth') + '&&fork=getAsk')
+            .then(res => res.text())
+            .then(
+        	
+        		(result) => {
+                    
+                    // alert(result);
+        			
+        			let rslt = result;
+                    if ( rslt != '' ) {
+                        
+                        self.setState({
+                            
+                            mesClass: 'main__contentBlock__messageAct'
+                            
+                        });
+                        
+                        localStorage.setItem('getAsk', rslt);
+                        
+                    }
+                    
+                    else {
+                        
+                        self.setState({
+                            
+                            mesClass: 'main__contentBlock__message'
+                            
+                        });
+                        
+                        localStorage.setItem('getAsk', 'null');
+                        
+                    }
+        			
+        		}
+        		
+            );
+                
+            }, 1000);    
+              
+         }
+          
+         componentWillMount() {
+             
+            let auth = localStorage.getItem('hauth');
+             
+            fetch('http://tech.caropka.ru/hint/auth.php?a=' + auth + '&mod=avatar')
+        	.then(res => res.text())
+        	.then(
+        	
+        		(result) => {
+        			
+        			this.setState({
+                        
+                        avatar: 'url(' + result + ')'
+                        
+                    });
+        			
+        		}
+        		
+        	);
+             
+            fetch('http://tech.caropka.ru/hint/auth.php?a=' + auth + '&mod=login')
+        	.then(res => res.text())
+        	.then(
+        	
+        		(result) => {
+        			
+        			this.setState({
+                        
+                        login: result
+                        
+                    });
+        			
+        		}
+        		
+        	); 
+             
+         }
+             
+         render() {
+                 
+            return(
+                    
+                <header className={headClasses[0]}><div className={headClasses[1]}><span className={headClasses[2]}>hint. anonymous tips for life</span><span className={headClasses[3]}>{this.state.login}</span><span className={headClasses[4]} style={{backgroundImage: this.state.avatar}}></span><span onClick={this.getAsk} className={this.state.mesClass}></span><span className={headClasses[6]}></span><span className={headClasses[7]}></span></div></header>
+                 
+            );
+                 
+         } 
+          
+      }
+
+      class Foot extends React.Component {
+          
+          constructor(props) {
+              
+              super(props);
+              this.state = {
+                  //
+              }
+              
+          }
+          
+          render() {
+              
+              return(
+              
+                  <footer className={footClasses[0]}></footer>
+              
+              );
+              
+          }
+          
+      }
+
+      class Content extends React.Component {
+          
+          constructor(props) {
+              
+              super(props);
+              this.state = {
+                  
+                  avatar: '',
+                  age: '',
+                  gender: '',
+                  job: '',
+                  character: '',
+                  rate: '',
+                  qst: 'null',
+                  answ: 'null',
+                  askMe: 'Вопросов нет',
+                  answerTextArea: 'Ответ на ваш вопрос'
+                  
+              }
+              
+              this.sendQuestions = this.sendQuestions.bind(this);
+              this.sendAnswers = this.sendAnswers.bind(this);
+              this.setStateHint = this.setStateHint.bind(this);
+              this.setStateAnswer = this.setStateAnswer.bind(this);
+              
+          }
+          
+          sendQuestions() {
+              
+            let auth = localStorage.getItem('hauth');
+            let ask = this.state.qst;
+             
+            fetch('http://tech.caropka.ru/hint/hinthub.php?hid=' + auth + '&qst=' + ask + '&fork=ask')
+        	.then(res => res.text())
+        	.then(
+        	
+        		(result) => {
+        			
+        			document.getElementsByClassName('main__contentBlock__workSpace__menu__texarea')[0].value = '';
+        			document.getElementsByClassName('main__contentBlock__workSpace__menu__texarea')[0].setAttribute('placeholder', 'Ваш вопрос отправлен..');
+                    
+                    var self = this;
+                    
+                    var answRound = setInterval(function() {
+                             
+                        // document.getElementsByClassName('main__contentBlock__workSpace__menu__texarea')[0].setAttribute('placeholder', 'Напишите о том, что вас волнует, постарайтесь уложиться в 200 символов');
+                        
+                        fetch('http://tech.caropka.ru/hint/hinthub.php?hid=' + localStorage.getItem('hauth') + '&&fork=getAnsw')
+        	            .then(res => res.text())
+        	            .then(
+        	
+        		          (result) => {
+                              
+                             // console.log(result);  
+        			
+        			         if ( result != '' ) {
+                                 
+                                self.setState({
+                                    
+                                    answerTextArea: result
+                                    
+                                });
+                                 
+                                document.getElementsByClassName('main__contentBlock__workSpace__menu__texarea')[0].setAttribute('placeholder', 'Напишите о том, что вас волнует, постарайтесь уложиться в 200 символов'); 
+                                 
+                                fetch('http://tech.caropka.ru/hint/hinthub.php?hid=' + auth + '&fork=clearAnsw')
+        	                    .then(res => res.text())
+        	                    .then(
+        	
+        		                  (result) => {
+        			
+        			                 clearInterval(answRound);
+        			
+        		                  }
+        		
+        	                    ); 
+                                 
+                             }
+        			
+        		          }               
+        		
+        	            );
+                             
+                    }, 1000);
+        			
+        		}
+        		
+        	);
+              
+          }
+          
+          sendAnswers() {
+              
+            let auth = localStorage.getItem('hauth');
+            let answ = (this.state.askMe).toString().split('::')[0] + '::' + this.state.answ;
+              
+            fetch('http://tech.caropka.ru/hint/hinthub.php?hid=' + auth + '&answer=' + answ + '&fork=answ')
+        	.then(res => res.text())
+        	.then(
+        	
+        		(result) => {
+                    
+        			// document.getElementsByClassName('main__contentBlock__workSpace__menu__texarea')[0].value = '';
+        			// document.getElementsByClassName('main__contentBlock__workSpace__menu__texarea')[0].setAttribute('placeholder', 'Ваш вопрос отправлен..');
+                    
+                    let auth = localStorage.getItem('hauth');
+              
+                    // alert(256000);
+             
+                    fetch('http://tech.caropka.ru/hint/hinthub.php?hid=' + auth + '&fork=clearAsk')
+        	        .then(res => res.text())
+        	        .then(
+        	
+        		      (result) => {
+        			
+        			     document.getElementsByClassName('main__contentBlock__workSpace__menu__texarea')[1].value = '';
+        			     document.getElementsByClassName('main__contentBlock__workSpace__menu__texarea')[1].setAttribute('placeholder', 'Ваш ответ отправлен..');
+                          
+                         setTimeout(function() {
+                             
+                             document.getElementsByClassName('main__contentBlock__workSpace__menu__texarea')[1].setAttribute('placeholder', 'Напишите ваш ответ на вопрос, который вам задали');
+                             
+                         }, 2000);
+        			
+        		      }
+        		
+        	        );
+        			
+        		}
+        		
+        	);    
+              
+          }
+          
+          setStateHint(e) {
+              
+              this.setState({
+                  
+                  qst: e.target.value
+                  
+              });
+              
+          }
+          
+          setStateAnswer(e) {
+              
+              this.setState({
+                  
+                  answ: e.target.value
+                  
+              });
+              
+          }
+          
+          componentWillMount() {
+              
+            var self = this; 
+             
+            setInterval(function() {  
+             
+                let locStorGetAsk = localStorage.getItem('getAsk');
+                
+                // console.log(locStorGetAsk + ' - проверка');
+                
+                if ( locStorGetAsk != null && locStorGetAsk != 'null' ) {
+                    
+                    self.setState({
+                        
+                        askMe: locStorGetAsk
+                        
+                    });
+                    
+                }
+                
+                else {
+                    
+                    self.setState({
+                        
+                        askMe: 'Вопросов нет'
+                        
+                    });
+                    
+                }
+                
+            }, 1000);     
+             
+            let auth = localStorage.getItem('hauth');
+             
+            fetch('http://tech.caropka.ru/hint/auth.php?a=' + auth + '&mod=avatar')
+        	.then(res => res.text())
+        	.then(
+        	
+        		(result) => {
+        			
+        			this.setState({
+                        
+                        avatar: 'url(' + result + ')'
+                        
+                    });
+        			
+        		}
+        		
+        	);
+              
+            fetch('http://tech.caropka.ru/hint/auth.php?a=' + auth + '&mod=age')
+        	.then(res => res.text())
+        	.then(
+        	
+        		(result) => {
+        			
+        			this.setState({
+                        
+                        age: result
+                        
+                    });
+        			
+        		}
+        		
+        	);
+              
+            fetch('http://tech.caropka.ru/hint/auth.php?a=' + auth + '&mod=gender')
+        	.then(res => res.text())
+        	.then(
+        	
+        		(result) => {
+        			
+        			this.setState({
+                        
+                        gender: result
+                        
+                    });
+        			
+        		}
+        		
+        	);  
+              
+            fetch('http://tech.caropka.ru/hint/auth.php?a=' + auth + '&mod=job')
+        	.then(res => res.text())
+        	.then(
+        	
+        		(result) => {
+        			
+        			this.setState({
+                        
+                        job: result
+                        
+                    });
+        			
+        		}
+        		
+        	);  
+              
+            fetch('http://tech.caropka.ru/hint/auth.php?a=' + auth + '&mod=character')
+        	.then(res => res.text())
+        	.then(
+        	
+        		(result) => {
+        			
+        			this.setState({
+                        
+                        character: result
+                        
+                    });
+        			
+        		}
+        		
+        	);  
+              
+            fetch('http://tech.caropka.ru/hint/auth.php?a=' + auth + '&mod=rate')
+        	.then(res => res.text())
+        	.then(
+        	
+        		(result) => {
+        			
+        			this.setState({
+                        
+                        rate: result
+                        
+                    });
+        			
+        		}
+        		
+        	);    
+             
+          }
+          
+          render() {
+              
+              return(
+              
+                  <main className={mainClasses[0]}>
+                      <div className={mainClasses[1]}>
+                          <div className={mainClasses[2]} style={{backgroundImage: this.state.avatar}}></div>
+                          <section className={mainClasses[3]}>
+                              <span><b>Age</b> {this.state.age}</span>
+                              <span><b>Gender</b> {this.state.gender}</span>
+                              <span><b>Job</b> {this.state.job}</span>
+                              <span><b>Character</b> calm</span>
+                              
+                              <div className={mainClasses[9]}>
+                                  
+                                  <div></div>
+                                  <p><b>{this.state.rate}</b></p>
+                                  
+                              </div>
+                              
+                              <section className={mainClasses[10]}>
+                                  
+                                  <h4>Добавленные</h4>
+                                  <p>HID576387</p>
+                                  <p>HID579244</p>
+                                  <p>HID576100</p>
+                                  
+                              </section>
+                              
+                          </section>
+                          <section className={mainClasses[4]}>
+                              <div className={mainClasses[6]}>
+                                  <span><b>Возраст</b></span>
+                                  <span><b>Пол</b></span>
+                                  <span><b>Деятельность</b></span>
+                                  <span><b>Характер</b></span>
+                                  <span><b>Применить</b></span>
+                              </div>
+                              <textarea onChange={this.setStateHint} maxlength="200" placeholder="Напишите о том, что вас волнует, постарайтесь уложиться в 200 символов" className={mainClasses[7]}></textarea>
+                              <span className={this.state.hiddenAskClass}>
+                                  <span></span>
+                                  <span></span>
+                                  <span></span>
+                                  <span></span>
+                                  <div onClick={this.sendQuestions} className={mainClasses[8]}>HINT</div>
+                                  <div className={mainClasses[11]}>RANDOM</div>
+                              </span>
+                              <div className={mainClasses[12]}>{this.state.answerTextArea}</div>
+                          </section>
+                          <section className={mainClasses[5]}>
+                              <div className={mainClasses[6]}>
+                                  <span><b>{(this.state.askMe).toString().split('::')[0]}</b></span>
+                                  <span>{(this.state.askMe).toString().split('::')[1]}</span>
+                              </div>
+                              <textarea onChange={this.setStateAnswer} className={mainClasses[7]} maxlength="200" placeholder="Напишите ваш ответ на вопрос, который вам задали"></textarea>
+                              <span>
+                                  <span></span>
+                                  <span></span>
+                                  <span></span>
+                                  <span></span>
+                                  <div onClick={this.sendAnswers} className={mainClasses[8]}>ОТВЕТИТЬ</div>
+                                  <div className={mainClasses[11]}>ПРОПУСТИТЬ</div>
+                              </span>
+                          </section>
+                          <section className={mainClasses[5]}></section>
+                      </div>
+                  </main>
+              
+              );
+              
+          }
+          
+      }
+
+      class MainWrapp extends React.Component {
+          
+          constructor(props) {
+              
+              super(props);
+              this.state = {}
+              
+          }
+          
+          componentWillMount() {
+              
+              console.log(localStorage.getItem('hauth'));
+              
+          }
+          
+          render() {
+              
+              if ( localStorage.getItem('hauth') != null ) {
+              
+              return(
+              
+                <section>
+                   
+                    <Head></Head>
+                    <Content></Content>
+                    <Foot></Foot>
+                
+                </section>
+              
+              );
+                  
+              }
+              
+          }
+          
+      }
+
+      ReactDOM.render(<MainWrapp></MainWrapp>, document.getElementById('hint'));
+
+    </script>
+
+</body>
+</html>
